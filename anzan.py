@@ -1,10 +1,12 @@
 import random, time
+kaisu = 1
+seikai = 0
 while True:
     a = 0
     b = 0
     c = 0
-    seikai = 1
-    kaisu = 1
+    
+    
     def setup(digit=1, freq=5, speed=1.2):
        return(a,b,c)
     a = (raw_input("Input digit: "))
@@ -18,12 +20,12 @@ while True:
     b = (raw_input("repetition?: "))
     if b <= 15:
         
-        print str(b)+" times"
+        print (str(b)+" times")
     elif b == '':
         b = 5
         print ("5 times")
     c = (raw_input("speed?: "))
-    if c < 2.0:   
+    if c <= 2.0:   
         print("Hussle!")
         
     elif c == '':
@@ -38,7 +40,7 @@ while True:
     keta = 0
     keisan = 0
     kotae = 0
-    kaisu += 1
+    
     n = a
     d = 10 ** n - 1
     for foo in range(b):
@@ -49,6 +51,7 @@ while True:
 
     kotae = (input("The answer is...\n"))
     time.sleep(2.0)
+    kaisu += 1
     print(goukei)
     if kotae == goukei:
         print('You got it!')
@@ -56,12 +59,15 @@ while True:
     if seikai == 0:
         print ("seikai nashi, so far")
     else:
-        print str(float(seikai)* 100 / float(kaisu)) + "%"
+        print(seikai, kaisu) 
+        #print(kaisu)
+        print (str(float(seikai)* 100 / float(kaisu)) + "%")
+
     answer = raw_input('Try again? (y/n): ')
     if answer in ('y', 'n'):
         #break
     #print 'Invalid input.'
-        if answer == ('y',''):
+        if answer == ('y' or ''):
             continue
         else:
             print 'Goodbye'
